@@ -1,6 +1,6 @@
-# W skorupce
+# wskorupce.pl
 
-Statyczna strona typu landing page i link-in-bio dla pracowni artystycznej W skorupce.
+Statyczna strona typu landing page i link-in-bio dla pracowni artystycznej wskorupce.pl.
 
 ## GitHub Pages
 
