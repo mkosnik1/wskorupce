@@ -27,7 +27,7 @@ const media = Array.isArray(apiPayload.data) ? apiPayload.data : [];
 const selected = media
   .filter((item) => ['IMAGE', 'VIDEO', 'CAROUSEL_ALBUM'].includes(item.media_type))
   .filter((item) => item.permalink && (item.media_url || item.thumbnail_url))
-  .slice(0, 3);
+  .slice(0, 6);
 
 if (selected.length === 0) throw new Error('Instagram API nie zwróciło postów ze zdjęciem.');
 
@@ -103,4 +103,4 @@ try {
 
 await writeFile(dataPath, `${JSON.stringify({ updatedAt, items }, null, 2)}\n`);
 
-console.log(`Zapisano ${items.length} najnowsze posty z Instagrama.`);
+console.log(`Zapisano ${items.length} najnowszych postów z Instagrama.`);
