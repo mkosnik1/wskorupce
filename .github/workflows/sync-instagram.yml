@@ -1,6 +1,11 @@
 name: Sync Instagram posts
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync-instagram.mjs'
+      - '.github/workflows/sync-instagram.yml'
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:

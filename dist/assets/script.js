@@ -1,7 +1,7 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const gallery = document.querySelector('.gallery-grid');
-const cardClasses = ['card-one', 'card-two', 'card-three'];
+const cardClasses = ['card-one', 'card-two', 'card-three', 'card-four', 'card-five', 'card-six'];
 
 function safeInstagramUrl(value) {
   try {
@@ -26,7 +26,7 @@ async function loadInstagramFeed() {
 
     const fragment = document.createDocumentFragment();
 
-    feed.items.slice(0, 3).forEach((item, index) => {
+    feed.items.slice(0, 6).forEach((item, index) => {
       const permalink = safeInstagramUrl(item.permalink);
       if (!permalink || typeof item.image !== 'string') return;
 
