@@ -10,27 +10,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Over+the+Rainbow&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=10">
+  <link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
     <defs>
-      <filter id="watercolor" x="-25%" y="-25%" width="150%" height="150%">
-        <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="7" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="24" xChannelSelector="R" yChannelSelector="B"/>
-        <feGaussianBlur stdDeviation=".7"/>
-      </filter>
-      <filter id="dry-paint" x="-15%" y="-40%" width="130%" height="180%">
-        <feTurbulence type="fractalNoise" baseFrequency=".035 .22" numOctaves="2" seed="12" result="texture"/>
-        <feComponentTransfer in="texture" result="broken"><feFuncA type="discrete" tableValues="0 0 0 .35 .75 1"/></feComponentTransfer>
-        <feComposite in="SourceGraphic" in2="broken" operator="in"/>
-      </filter>
+      <symbol id="drawn-arrow" viewBox="0 0 36 22">
+        <path d="M2.5 10.9c8.7-.5 18-.4 29 .1"/>
+        <path d="M24 4.2c2.1 2.1 4.5 4.3 7.4 6.8-2.5 2.1-4.8 4.3-7.4 6.8"/>
+        <path class="arrow-echo" d="M3.5 12.7c8.2-.3 16.8-.2 26.1.1"/>
+      </symbol>
     </defs>
-    <symbol id="drawn-arrow" viewBox="0 0 36 22">
-      <path d="M2.5 10.9c8.7-.5 18-.4 29 .1"/>
-      <path d="M24 4.2c2.1 2.1 4.5 4.3 7.4 6.8-2.5 2.1-4.8 4.3-7.4 6.8"/>
-      <path class="arrow-echo" d="M3.5 12.7c8.2-.3 16.8-.2 26.1.1"/>
-    </symbol>
   </svg>
   <div class="paper-noise" aria-hidden="true"></div>
 
@@ -49,8 +39,8 @@
 
   <main id="poczatek">
     <section class="hero" aria-labelledby="page-title">
-      <span class="watercolor-blob blob-hero" aria-hidden="true"></span>
-      <svg class="dry-stroke stroke-hero" viewBox="0 0 340 90" aria-hidden="true"><path d="M7 54C70 25 169 34 329 17"/><path d="M16 70C103 50 210 63 316 43"/></svg>
+      <img class="paint-texture watercolor-texture texture-hero" src="assets/textures/watercolor-wash.webp" alt="" aria-hidden="true">
+      <img class="paint-texture dry-paint-texture texture-hero-stroke" src="assets/textures/dried-paint.webp" alt="" aria-hidden="true">
       <div class="hero-copy">
         <p class="eyebrow"><span aria-hidden="true">●</span> Agata Czacharska · artystka</p>
         <h1 id="page-title">Lubię moment,<br><em>kiedy jeszcze nie wiadomo,</em><br>co powstanie.</h1>
@@ -68,7 +58,7 @@
     </section>
 
     <section class="gallery" id="prace" aria-labelledby="gallery-title">
-      <span class="watercolor-blob blob-gallery" aria-hidden="true"></span>
+      <img class="paint-texture watercolor-texture texture-gallery" src="assets/textures/watercolor-wash.webp" alt="" aria-hidden="true" loading="lazy">
       <div class="section-head">
         <div><p class="section-label">Najnowsze z pracowni</p><h2 id="gallery-title">Wybrane prace</h2></div>
         <p class="section-intro">Kolor, ślad i przypadek. Galeria aktualizuje się razem z profilem wskorupce.pl.</p>
@@ -83,10 +73,10 @@
 
     <section class="process" id="proces" aria-labelledby="process-title">
       <div class="process-card">
-        <span class="paint-puddle puddle-mint" aria-hidden="true"></span><span class="paint-puddle puddle-pink" aria-hidden="true"></span>
+        <img class="paint-texture watercolor-texture texture-process-wash" src="assets/textures/watercolor-wash.webp" alt="" aria-hidden="true" loading="lazy">
         <p class="handwritten">najbardziej lubię proces</p>
         <blockquote>Nie zaczynam od gotowej odpowiedzi. Sprawdzam, co zrobi kolor, materiał i kolejny ślad.</blockquote>
-        <svg class="dry-stroke stroke-process" viewBox="0 0 420 100" aria-hidden="true"><path d="M10 62C115 39 260 66 408 33"/></svg>
+        <img class="paint-texture dry-paint-texture texture-process-stroke" src="assets/textures/dried-paint.webp" alt="" aria-hidden="true" loading="lazy">
       </div>
       <div class="process-copy">
         <p class="section-label">Podejście</p>
@@ -98,7 +88,7 @@
     </section>
 
     <section class="about" id="o-mnie" aria-labelledby="about-title">
-      <span class="watercolor-blob blob-about" aria-hidden="true"></span>
+      <img class="paint-texture watercolor-texture texture-about" src="assets/textures/watercolor-wash.webp" alt="" aria-hidden="true" loading="lazy">
       <div class="about-intro">
         <p class="section-label">O mnie</p>
         <h2 id="about-title">Agata<br>Czacharska</h2>
@@ -127,7 +117,7 @@
     </section>
 
     <section class="cta" aria-labelledby="cta-title">
-      <span class="paint-puddle puddle-cta" aria-hidden="true"></span>
+      <img class="paint-texture watercolor-texture texture-cta" src="assets/textures/watercolor-wash.webp" alt="" aria-hidden="true" loading="lazy">
       <p class="handwritten">któraś praca została z Tobą?</p>
       <h2 id="cta-title">Zapytaj o dostępne prace.</h2>
       <p>Najłatwiej złapiesz mnie w wiadomości na Instagramie.</p>
