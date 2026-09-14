@@ -13,15 +13,20 @@
   --line: #2d211e;
   --shadow: 6px 7px 0 var(--line);
   --font-body: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  --font-display: 'Over the Rainbow', cursive;
+  --font-display: 'Charmonman', cursive;
 }
 
 * { box-sizing: border-box; }
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
   position: relative;
   margin: 0;
-  overflow-x: clip;
   color: var(--ink);
   background:
     radial-gradient(circle at 7% 17%, rgba(183,220,230,.23), transparent 23rem),
@@ -74,7 +79,7 @@ h1, h2, p, blockquote, figure { margin-top: 0; }
 }
 .eyebrow { display: flex; align-items: center; gap: 9px; }
 .eyebrow span { color: var(--orange); font-size: .9rem; }
-.handwritten, .scribble { font-family: var(--font-display); }
+.handwritten, .process-mark { font-family: var(--font-display); }
 
 .hero {
   position: relative;
@@ -86,7 +91,7 @@ h1, h2, p, blockquote, figure { margin-top: 0; }
   padding: 70px 0 118px;
 }
 .hero-copy { position: relative; z-index: 2; }
-.hero h1 { margin: 0; font-size: clamp(3.55rem, 6.7vw, 6.8rem); letter-spacing: -.045em; line-height: .94; }
+.hero h1 { margin: 0; font-size: clamp(3.55rem, 6.7vw, 6.8rem); letter-spacing: -.045em; line-height: 1.02; }
 .hero h1 em { color: var(--orange); font-style: normal; }
 .intro { max-width: 610px; margin: 34px 0 0; font-size: clamp(1.12rem, 1.8vw, 1.42rem); line-height: 1.48; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 26px; margin-top: 36px; }
@@ -104,7 +109,7 @@ h1, h2, p, blockquote, figure { margin-top: 0; }
 .photo-main img { width: 100%; aspect-ratio: 4 / 5; border: 1px solid #b8b2a7; object-fit: cover; }
 .tape { position: absolute; z-index: 3; width: 116px; height: 31px; background: rgba(224,219,184,.78); border-inline: 1px solid rgba(60,60,50,.18); }
 .tape-top { top: 2px; left: 41%; transform: rotate(-4deg); }
-.scribble { position: absolute; right: -31px; bottom: 0; margin: 0; color: var(--blue); font-size: 1.45rem; line-height: 1.05; transform: rotate(-7deg); }
+.process-mark { position: absolute; right: -34px; bottom: -18px; z-index: 4; width: 132px; height: 132px; display: grid; place-items: center; margin: 0; padding: 18px; color: #fff; background: var(--orange); border: 2px solid var(--line); border-radius: 49% 45% 48% 42%; box-shadow: 3px 4px 0 var(--line); font-size: 1.05rem; line-height: 1.15; text-align: center; transform: rotate(-8deg); }
 
 .paint-texture { position: absolute; max-width: none; pointer-events: none; user-select: none; }
 .watercolor-texture { mix-blend-mode: multiply; }
@@ -115,7 +120,7 @@ h1, h2, p, blockquote, figure { margin-top: 0; }
 .gallery { position: relative; padding: 108px 0 134px; border-top: 1.5px solid var(--line); }
 .texture-gallery { width: 660px; right: -330px; top: -25px; opacity: .29; transform: rotate(16deg); }
 .section-head { position: relative; z-index: 2; display: flex; align-items: end; justify-content: space-between; gap: 42px; margin-bottom: 42px; }
-.section-head h2, .process h2, .about h2, .workshops h2 { margin: 0; font-size: clamp(3.25rem, 6vw, 5.8rem); letter-spacing: -.04em; line-height: .98; }
+.section-head h2, .process h2, .about h2, .workshops h2 { margin: 0; font-size: clamp(3.25rem, 6vw, 5.8rem); letter-spacing: -.04em; line-height: 1.04; }
 .section-intro { max-width: 430px; margin-bottom: 8px; font-size: 1.05rem; line-height: 1.6; }
 .gallery-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(22px,3vw,40px); align-items: start; }
 .gallery-card { position: relative; aspect-ratio: 1; margin: 0; overflow: hidden; padding: 9px; background: #fffdf7; border: 2px solid var(--line); box-shadow: 4px 5px 0 var(--line); }
@@ -142,10 +147,9 @@ h1, h2, p, blockquote, figure { margin-top: 0; }
 .texture-about { width: 630px; left: -360px; bottom: -75px; opacity: .28; transform: rotate(-13deg); }
 .about-intro { position: relative; z-index: 2; align-self: start; }
 .about h2 { margin-top: 12px; }
-.about-role { margin: 24px 0 0; color: var(--blue); font-family: var(--font-display); font-size: clamp(1.25rem,2vw,1.62rem); line-height: 1.28; }
-.about-mark { width: 88px; height: 88px; display: grid; place-items: center; margin: 42px 0 0 auto; color: #fff; background: var(--orange); border: 2px solid var(--line); border-radius: 49% 45% 48% 42%; box-shadow: 3px 4px 0 var(--line); font-family: var(--font-display); font-size: 1.35rem; transform: rotate(-8deg); }
-.about-copy { position: relative; z-index: 2; max-width: 720px; padding: clamp(32px,4.5vw,56px); background: rgba(182,223,217,.3); border: 2px solid var(--line); border-radius: 7px 34px 10px 26px; box-shadow: var(--shadow); transform: rotate(.3deg); }
-.about-copy::after { content: ''; position: absolute; width: 92px; height: 92px; right: 18px; bottom: 12px; border: 8px solid rgba(203,184,221,.25); border-radius: 47% 53% 45% 55%; transform: rotate(18deg); }
+.about-role { margin: 24px 0 0; color: var(--blue); font-family: var(--font-display); font-size: clamp(1.25rem,2vw,1.62rem); line-height: 1.4; }
+.about-copy { position: relative; z-index: 2; max-width: 720px; overflow: hidden; padding: clamp(32px,4.5vw,56px); background: rgba(182,223,217,.3); border: 2px solid var(--line); border-radius: 7px 34px 10px 26px; box-shadow: var(--shadow); transform: rotate(.3deg); }
+.about-copy::after { content: ''; position: absolute; width: 390px; height: 260px; right: -150px; bottom: -125px; background: url('textures/watercolor-wash.webp') center / contain no-repeat; opacity: .38; mix-blend-mode: multiply; pointer-events: none; transform: rotate(15deg); }
 .about-copy p { position: relative; z-index: 1; margin: 0; font-size: 1.08rem; line-height: 1.78; }
 .about-copy p + p { margin-top: 1.35em; }
 
@@ -164,7 +168,7 @@ h1, h2, p, blockquote, figure { margin-top: 0; }
 .cta { position: relative; margin-bottom: 62px; overflow: hidden; padding: clamp(58px,8vw,100px) 24px; color: #fffdf7; background: var(--blue); border: 2px solid var(--line); border-radius: 34% 7% 30% 9% / 11% 30% 9% 26%; box-shadow: var(--shadow); text-align: center; }
 .cta > *:not(.paint-texture) { position: relative; z-index: 2; }
 .cta .handwritten { margin-bottom: 8px; color: var(--yellow); font-size: 1.35rem; transform: rotate(-2deg); }
-.cta h2 { max-width: 900px; margin: 0 auto; font-size: clamp(3.35rem,6.8vw,6.5rem); letter-spacing: -.04em; line-height: 1; }
+.cta h2 { max-width: 900px; margin: 0 auto; font-size: clamp(3.35rem,6.8vw,6.5rem); letter-spacing: -.04em; line-height: 1.04; }
 .cta > p:not(.handwritten) { margin: 24px 0 0; font-size: 1.08rem; }
 .cta .button { margin-top: 28px; color: var(--ink); }
 .texture-cta { width: 680px; top: -250px; right: -150px; opacity: .44; mix-blend-mode: screen; transform: rotate(13deg); }
@@ -199,7 +203,7 @@ footer a { color: var(--blue); font-family: var(--font-display); font-size: 1.35
   .hero-art { width: 94%; padding-top: 12px; }
   .photo-main { padding: 9px 9px 32px; }
   .photo-main img { height: min(82vw,390px); aspect-ratio: auto; object-position: 50% 50%; }
-  .scribble { right: -14px; font-size: 1.2rem; }
+  .process-mark { right: -8px; bottom: -20px; width: 112px; height: 112px; padding: 14px; font-size: .9rem; }
   .texture-hero { width: 570px; left: -310px; top: 7%; opacity: .3; }
   .texture-hero-stroke { width: 470px; left: -20%; bottom: -4px; opacity: .25; }
   .gallery { padding: 86px 0 104px; }
@@ -213,8 +217,7 @@ footer a { color: var(--blue); font-family: var(--font-display); font-size: 1.35
   .process { gap: 52px; padding: 96px 0; }
   .process-copy p:not(.section-label), .about-copy p { font-size: 1rem; line-height: 1.7; }
   .about { padding: 92px 0 104px; }
-  .about-mark { position: absolute; right: 3px; bottom: 0; width: 70px; height: 70px; margin: 0; font-size: 1.05rem; }
-  .about-role { padding-right: 84px; font-size: 1.15rem; }
+  .about-role { font-size: 1.15rem; }
   .about-copy { padding: 28px 22px; box-shadow: 4px 5px 0 var(--line); transform: none; }
   .workshops { padding: 92px 0 110px; }
   .workshop-collage { min-height: 440px; gap: 10px; padding: 8px; }
