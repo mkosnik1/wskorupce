@@ -10,13 +10,8 @@ Strona publikuje się automatycznie z katalogu `dist` po każdym pushu do gałę
 
 Otwórz plik `dist/index.html` w przeglądarce lub uruchom dowolny prosty serwer HTTP w katalogu `dist`.
 
-## Synchronizacja Instagrama
+## Portfolio
 
-Workflow `Sync Instagram posts` pobiera trzy najnowsze posty co 6 godzin. Zdjęcia są zapisywane lokalnie w `dist/assets/instagram`, więc token Instagrama nigdy nie trafia do kodu strony.
+Galeria jest częścią strony i nie wymaga tokenu ani połączenia z API Instagrama. Dzięki temu jej układ, podpisy i jakość zdjęć pozostają pod pełną kontrolą.
 
-W repozytorium dodaj dwa sekrety Actions:
-
-- `INSTAGRAM_ACCESS_TOKEN` z długoterminowym tokenem konta firmowego;
-- `INSTAGRAM_USER_ID` z identyfikatorem konta Instagram Professional.
-
-Po dodaniu sekretów uruchom workflow ręcznie w zakładce Actions. Jeśli synchronizacja nie jest skonfigurowana lub chwilowo nie działa, strona zachowa obecne zdjęcia zastępcze.
+Aby dodać pracę, skopiuj zoptymalizowane zdjęcie do `dist/assets`, a następnie dodaj kolejną kartę `.gallery-card` w `dist/index.html`. Instagram pozostaje linkiem do bieżących kadrów z pracowni i kanałem kontaktu.
