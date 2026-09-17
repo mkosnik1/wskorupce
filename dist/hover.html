@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/hover.css?v=2">
+  <link rel="stylesheet" href="assets/hover.css?v=3">
 </head>
 <body>
   <header class="variant-header">
@@ -37,7 +37,7 @@
         <p class="hero-intro">Tworzę, eksperymentując z kolorem, fakturą i formą. Wybierz pracę, żeby zobaczyć ją z bliska.</p>
       </div>
 
-      <div class="art-accordion" aria-label="Wybrane prace Agaty">
+      <div class="art-accordion" data-accordion aria-label="Wybrane prace Agaty">
         <article class="art-panel" data-panel>
           <img src="assets/portfolio/akwarela.webp" alt="Akwarela przedstawiająca gałązkę czerwonej porzeczki" width="1200" height="1600">
           <button class="panel-trigger" type="button" aria-expanded="false" aria-label="Pokaż akwarelę"><span>Akwarela</span></button>
@@ -78,19 +78,14 @@
     </section>
 
     <section class="about" id="o-mnie" aria-labelledby="about-title">
-      <div class="about-card" data-about>
+      <div class="about-card">
         <div class="about-photo"><img src="assets/portfolio/autoportret.webp" alt="Uśmiechnięta Agata w okularach, z dłońmi pokrytymi turkusową farbą" width="1440" height="1082" loading="lazy"></div>
-        <div class="about-details">
-          <button class="about-trigger" type="button" aria-expanded="false" aria-controls="about-copy">
-            <span>O Agacie</span><span class="about-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="about-copy" id="about-copy">
-            <p class="section-label">O mnie</p>
-            <h2 id="about-title">Agata Czacharska</h2>
-            <p class="about-role">artystka · edukatorka · absolwentka ASP we Wrocławiu</p>
-            <p>Jestem artystką z wykształceniem rzeźbiarskim. Pracuję z technikami płaskimi i przestrzennymi. Szukam własnego języka pomiędzy kolorem, materiałem i intuicją.</p>
-            <p>Gotowa praca jest dla mnie ważna, ale to droga do niej daje mi najwięcej energii.</p>
-          </div>
+        <div class="about-strip" aria-hidden="true"><span>O mnie</span></div>
+        <div class="about-copy">
+          <h2 id="about-title">Agata Czacharska</h2>
+          <p class="about-role">artystka · edukatorka · absolwentka ASP we Wrocławiu</p>
+          <p>Jestem artystką z wykształceniem rzeźbiarskim. Pracuję z technikami płaskimi i przestrzennymi. Szukam własnego języka pomiędzy kolorem, materiałem i intuicją.</p>
+          <p>Gotowa praca jest dla mnie ważna, ale to droga do niej daje mi najwięcej energii.</p>
         </div>
       </div>
     </section>
@@ -102,11 +97,27 @@
         <p>Na zamówienie przygotowuję twórcze spotkania dla dzieci, dorosłych i grup. Daję przestrzeń do eksperymentowania i działania bez oceniania.</p>
         <a href="https://www.instagram.com/wskorupce.pl/" target="_blank" rel="noopener noreferrer">Zapytaj o warsztat <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="workshop-grid" aria-label="Zdjęcia z warsztatów artystycznych Agaty">
-        <img src="assets/workshops/blue-process.webp" alt="Malowanie błękitnego abstrakcyjnego obrazu podczas warsztatów" width="1152" height="1536" loading="lazy">
-        <img src="assets/workshops/red-process.webp" alt="Czerwony abstrakcyjny obraz wykonany podczas warsztatów" width="1152" height="1536" loading="lazy">
-        <img src="assets/workshops/black-texture.webp" alt="Nakładanie czarnej faktury na duże płótno" width="1154" height="865" loading="lazy">
-        <img src="assets/workshops/lilac-process.webp" alt="Malowanie fioletowego obrazu szpachelką" width="697" height="929" loading="lazy">
+      <div class="art-accordion workshop-accordion" data-accordion aria-label="Zdjęcia z warsztatów artystycznych Agaty">
+        <article class="art-panel" data-panel>
+          <img src="assets/workshops/blue-process.webp" alt="Malowanie błękitnego abstrakcyjnego obrazu podczas warsztatów" width="1152" height="1536" loading="lazy">
+          <button class="panel-trigger" type="button" aria-expanded="false" aria-label="Pokaż proces twórczy"><span>Proces</span></button>
+          <div class="panel-copy"><p>01 · warsztaty</p><h3>Proces twórczy</h3></div>
+        </article>
+        <article class="art-panel" data-panel>
+          <img src="assets/workshops/red-process.webp" alt="Czerwony abstrakcyjny obraz wykonany podczas warsztatów" width="1152" height="1536" loading="lazy">
+          <button class="panel-trigger" type="button" aria-expanded="false" aria-label="Pokaż ekspresję"><span>Ekspresja</span></button>
+          <div class="panel-copy"><p>02 · warsztaty</p><h3>Swoboda działania</h3></div>
+        </article>
+        <article class="art-panel" data-panel>
+          <img src="assets/workshops/black-texture.webp" alt="Nakładanie czarnej faktury na duże płótno" width="1154" height="865" loading="lazy">
+          <button class="panel-trigger" type="button" aria-expanded="false" aria-label="Pokaż pracę z fakturą"><span>Faktura</span></button>
+          <div class="panel-copy"><p>03 · warsztaty</p><h3>Praca z fakturą</h3></div>
+        </article>
+        <article class="art-panel" data-panel>
+          <img src="assets/workshops/lilac-process.webp" alt="Malowanie fioletowego obrazu szpachelką" width="697" height="929" loading="lazy">
+          <button class="panel-trigger" type="button" aria-expanded="false" aria-label="Pokaż eksperymentowanie z kolorem"><span>Kolor</span></button>
+          <div class="panel-copy"><p>04 · warsztaty</p><h3>Eksperymentowanie</h3></div>
+        </article>
       </div>
     </section>
 
@@ -118,6 +129,6 @@
   </main>
 
   <footer><a href="#poczatek">wskorupce.pl</a><span>Agata Czacharska · sztuka i proces twórczy</span><span id="year"></span></footer>
-  <script src="assets/hover.js?v=2"></script>
+  <script src="assets/hover.js?v=3"></script>
 </body>
 </html>
